@@ -1,0 +1,131 @@
+export default function ShopifyMaintenancePage() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800 px-4 py-10">
+      {/* Hero Section */}
+      <section className="text-center mb-16">
+        <h1 className="text-4xl font-bold mb-4">Monthly Shopify Store Maintenance & Support</h1>
+        <p className="text-lg mb-4 max-w-2xl mx-auto">
+          Keep your Shopify store running smoothly with expert monthly support — fast fixes, theme edits, app setup, SEO tweaks, and more.
+        </p>
+        <p className="text-xl font-semibold text-green-600">Starting from just $99/month</p>
+        <button className="mt-6 px-6 py-2 bg-blue-600 text-white rounded-2xl shadow hover:bg-blue-700 transition">
+          Schedule a Free Consultation
+        </button>
+      </section>
+
+      {/* What's Included */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-center mb-10">What’s Included</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {[
+            { icon: '🔧', title: 'Theme Tweaks', desc: 'Fix layout issues, customize look & feel' },
+            { icon: '🛍️', title: 'Product Updates', desc: 'Upload, edit, or remove products' },
+            { icon: '⚙️', title: 'App Setup', desc: 'Help with installing and configuring apps' },
+            { icon: '🚀', title: 'Speed Optimization', desc: 'Improve site speed and performance' },
+            { icon: '🛡️', title: 'Security Checks', desc: 'Backups, broken link checks' },
+            { icon: '📈', title: 'Monthly Reports', desc: 'Basic performance & SEO health summary' },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition"
+            >
+              <div className="text-3xl mb-2">{item.icon}</div>
+              <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing Plans */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-center mb-10">Pricing Plans</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {[
+            {
+              title: 'Basic Plan',
+              price: '$99/month',
+              features: [
+                '5 support hours/month',
+                'Minor theme changes',
+                'Product & image updates',
+              ],
+            },
+            {
+              title: 'Standard Plan',
+              price: '$199/month',
+              features: [
+                '10 support hours/month',
+                'App setup & integrations',
+                'Homepage and banner updates',
+              ],
+            },
+            {
+              title: 'Premium Plan',
+              price: '$399/month',
+              features: [
+                'Unlimited tasks (fair use)',
+                'Priority response',
+                'SEO & speed optimization',
+                'Monthly analytics report',
+              ],
+            },
+          ].map((plan, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col"
+            >
+              <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+              <p className="text-xl text-green-600 font-semibold mb-4">{plan.price}</p>
+              <ul className="flex-1 space-y-2 mb-4">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="text-sm">✅ {feature}</li>
+                ))}
+              </ul>
+              <button className="mt-auto px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700">
+                Choose Plan
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="text-center max-w-xl mx-auto">
+        <h2 className="text-3xl font-bold mb-6">Let’s Get Started</h2>
+        <form
+          action="https://formsubmit.co/your@email.com"
+          method="POST"
+          className="space-y-4 text-left"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full p-3 border rounded-xl"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="w-full p-3 border rounded-xl"
+          />
+          <textarea
+            name="message"
+            placeholder="What kind of help do you need?"
+            required
+            className="w-full p-3 border rounded-xl"
+          />
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700"
+          >
+            Request Support
+          </button>
+        </form>
+      </section>
+    </div>
+  );
+}
